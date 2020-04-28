@@ -9,15 +9,15 @@ import java.util.Arrays;
  * @created_at 27/04/2020 - 23:51
  * @project InnopolisUniversity
  */
-public class InsertSort {
+public class InsertSort implements AlgoSort<Person>{
     private Person[] persons;
 
     /**
      * Сортировка вставками
      * @param persons отсортированный массив
      */
-    public void InsertSort(Person[] persons) {
-        Instant start = Instant.now();
+    @Override
+    public Person[] sort(Person[] persons) {
         //  Сортировка по полу
         for (int i = 0; i < persons.length; i++) {
             int min = i;
@@ -64,8 +64,6 @@ public class InsertSort {
             persons[i] = persons[min];
             persons[min] = tmp;
         }
-        Instant end = Instant.now();
-        Arrays.asList(persons).forEach(System.out::println);
-        System.out.println("\nTimeDuration: " + Duration.between(start, end));
+        return persons;
     }
 }

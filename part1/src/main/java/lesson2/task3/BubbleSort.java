@@ -4,6 +4,7 @@ package lesson2.task3;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author 18395435
@@ -11,15 +12,15 @@ import java.util.Arrays;
  * @project InnopolisUniversity
  */
 
-public class BubbleSort {
+public class BubbleSort implements AlgoSort<Person>{
     private Person[] persons;
 
     /**
      * Сортировка пузырьком
      * @param persons отсортированный массив
      */
-    public void BubbleSort(Person[] persons) {
-        Instant start = Instant.now();
+    @Override
+    public Person[] sort(Person[] persons) {
         //  Сортировка по полу
         for (int i = persons.length; i > 0; i--) {
             for (int j = 1; j < persons.length; j++) {
@@ -58,8 +59,6 @@ public class BubbleSort {
                 }
             }
         }
-        Instant end = Instant.now();
-        Arrays.asList(persons).forEach(System.out::println);
-        System.out.println("\nTimeDuration: " + Duration.between(start, end));
+        return persons;
     }
 }
