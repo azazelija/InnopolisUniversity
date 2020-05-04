@@ -16,6 +16,10 @@ public class MathBox<T extends Number> extends ObjectBox{
         collection.addAll(arr);
     }
 
+    /**
+     * метод summator, возвращающий сумму всех элементов коллекции
+     * @return сумма чисел
+     */
     public Number summator() {
         double sum = 0.0;
 
@@ -36,6 +40,12 @@ public class MathBox<T extends Number> extends ObjectBox{
         return sum;
     }
 
+    /**
+     * метод splitter, выполняющий поочередное деление всех хранящихся в объекте элементов на делитель,
+     * являющийся аргументом метода. Хранящиеся в объекте данные полностью заменяются результатами деления
+     * @param del
+     * @return новая коллекция
+     */
     public Set<Number> splitter(int del) {
         Set<Number> set = new HashSet<>();
         for(Number i : collection) {
@@ -56,6 +66,10 @@ public class MathBox<T extends Number> extends ObjectBox{
         return set;
     }
 
+    /**
+     * метод, который получает на вход Integer и если такое значение есть в коллекции, удаляет его
+     * @return boolean
+     */
     public boolean deleteIntegerValue() {
         return collection.removeIf(Integer.class::isInstance);
     }
