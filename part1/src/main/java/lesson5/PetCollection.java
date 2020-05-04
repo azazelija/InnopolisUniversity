@@ -8,6 +8,11 @@ import java.util.stream.Collectors;
  * @created_at 03/05/2020 - 16:00
  * @project InnopolisUniversity
  */
+
+/**
+ * Картотека животных
+ * @param <T> любые животные, наследуемые от класса Pet
+ */
 public class PetCollection<T extends Pet> {
     private List<T> pets;
 
@@ -15,18 +20,37 @@ public class PetCollection<T extends Pet> {
         pets = new ArrayList<>();
     }
 
+    /**
+     * Добавить животное в коллекция
+     * @param pet
+     * @return true - добавлен
+     *         false - животное уже присутствует
+     */
     public boolean addPet(T pet) {
         if (pets.contains(pet))
             return false;
         return pets.add(pet);
     }
 
+    /**
+     * Поиск по кличке
+     * @param name
+     * @return список животных по данной кличке, иначе null
+     */
     public List<T> findByName(String name) {
-        return  pets.stream()
+        List<T> list =
+                pets.stream()
                 .filter((p) -> p.getName().equals(name))
                 .collect(Collectors.toList());
+
+        return list.size() == 0 ? null : list;
     }
 
+    /**
+     * Изменение параметров животного
+     * @param id нужного животного
+     * @param pet новые поля
+     */
     public void changePet(UUID id, T pet) {
         if (pets.stream().noneMatch(p -> p.getId().equals(id)))
             pets.add(pet);
@@ -39,6 +63,10 @@ public class PetCollection<T extends Pet> {
                 .setWeight(pet.getWeight()));
     }
 
+    /**
+     * Сортировка коллекции по полям: владелец, кличка, вес
+     * @return отсортированная коллекция
+     */
     public List<T> sort() {
         return  pets.stream()
                 .sorted(

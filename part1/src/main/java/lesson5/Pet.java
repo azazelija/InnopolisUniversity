@@ -9,10 +9,29 @@ import java.util.UUID;
  * @created_at 03/05/2020 - 16:01
  * @project InnopolisUniversity
  */
+
+/**
+ * Базовая сущность питомца
+ */
 public class Pet {
+    /**
+     * Генерируемое значение id
+     */
     private UUID id;
+
+    /**
+     * Кличка
+     */
     private String name;
+
+    /**
+     * Владелец, класс Person
+     */
     private Person owner;
+
+    /**
+     * Вес
+     */
     private int weight;
 
     public Pet(String name, Person owner, int weight) {

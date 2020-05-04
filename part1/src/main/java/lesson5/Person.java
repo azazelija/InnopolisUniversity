@@ -1,6 +1,5 @@
 package lesson5;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 /**
@@ -8,12 +7,27 @@ import java.util.Objects;
  * @created_at 03/05/2020 - 16:00
  * @project InnopolisUniversity
  */
+
+/**
+ * Класс-сущность человека
+ */
 public class Person implements Comparable<Person> {
+    /**
+     * Имя
+     */
     private String username;
+
+    /**
+     * Возраст
+     */
     private int age;
+
+    /**
+     * Пол
+     */
     private Sex sex;
 
-    private enum Sex {
+    public enum Sex {
         FEMALE,
         MALE
     }
