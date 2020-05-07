@@ -7,7 +7,7 @@ import java.util.*;
  * @created_at 29/04/2020 - 13:19
  * @project InnopolisUniversity
  */
-public class MathBox<T extends Number> extends ObjectBox{
+public class MathBox<T extends Number> extends ObjectBox<T>{
 
     private Set<T> collection;
 

@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
  * @param <T> любые животные, наследуемые от класса Pet
  */
 public class PetCollection<T extends Pet> {
-    private List<T> pets;
+    private Map<UUID, T> pets;
 
     public PetCollection() {
-        pets = new ArrayList<>();
+        pets = new HashMap<>();
     }
 
     /**
@@ -27,9 +27,10 @@ public class PetCollection<T extends Pet> {
      *         false - животное уже присутствует
      */
     public boolean addPet(T pet) {
-        if (pets.contains(pet))
+        if (pets.containsKey(pet.getId()))
             return false;
-        return pets.add(pet);
+        pets.put(pet.getId(), pet);
+        return true;
     }
 
     /**
@@ -39,8 +40,8 @@ public class PetCollection<T extends Pet> {
      */
     public List<T> findByName(String name) {
         List<T> list =
-                pets.stream()
-                .filter((p) -> p.getName().equals(name))
+                pets.values().stream()
+                .filter(t -> t.getName().equals(name))
                 .collect(Collectors.toList());
 
         return list.size() == 0 ? null : list;
@@ -52,12 +53,13 @@ public class PetCollection<T extends Pet> {
      * @param pet новые поля
      */
     public void changePet(UUID id, T pet) {
-        if (pets.stream().noneMatch(p -> p.getId().equals(id)))
-            pets.add(pet);
-        pets.stream()
-                .filter(p -> p.getId().equals(id))
+        if (pets.keySet().stream().noneMatch(k -> k.equals(id)))
+            pets.put(id, pet);
+        pets.entrySet()
+                .stream()
+                .filter(k -> k.getKey().equals(id))
                 .findFirst()
-                .ifPresent(t -> t
+                .ifPresent(e -> e.getValue()
                 .setName(pet.getName())
                 .setOwner(pet.getOwner())
                 .setWeight(pet.getWeight()));
@@ -68,7 +70,7 @@ public class PetCollection<T extends Pet> {
      * @return отсортированная коллекция
      */
     public List<T> sort() {
-        return  pets.stream()
+        return  pets.values().stream()
                 .sorted(
                 Comparator.comparing(Pet::getOwner)
                         .thenComparing(Pet::getName)

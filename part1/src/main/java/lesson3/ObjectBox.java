@@ -7,15 +7,23 @@ import java.util.*;
  * @created_at 29/04/2020 - 14:46
  * @project InnopolisUniversity
  */
-public class ObjectBox {
+public class ObjectBox<T> {
 
-    private Collection<Object> collection;
+    private Collection<T> collection;
 
-    public boolean addObject(Object o) {
+    public ObjectBox(Collection<T> collection) {
+        this.collection = collection;
+    }
+
+    public ObjectBox() {
+        collection = new ArrayList<>();
+    }
+
+    public boolean addObject(T o) {
         return collection.add(o);
     }
 
-    public boolean deleteObject(Object o) {
+    public boolean deleteObject(T o) {
         return collection.remove(o);
     }
 }

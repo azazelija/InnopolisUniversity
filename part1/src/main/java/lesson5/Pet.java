@@ -17,7 +17,7 @@ public class Pet {
     /**
      * Генерируемое значение id
      */
-    private UUID id;
+    private final UUID id;
 
     /**
      * Кличка
