@@ -4,8 +4,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 import java.util.stream.IntStream;
 
 /**
@@ -14,8 +13,10 @@ import java.util.stream.IntStream;
  * @project InnopolisUniversity
  */
 public class Factorial{
-    //poll-thread
-    public ThreadPoolExecutor executor;
+    /**
+     *  Pool threads
+     */
+    private ExecutorService executor = Executors.newCachedThreadPool();
 
     /**
      *  Контейнер, хранящий в себе вычисления фрактала для каждого числа
@@ -71,6 +72,13 @@ public class Factorial{
         return res;
     }
 
+    /**
+     * Подсчет при помощи создания новых потоков
+     * @param num
+     * @param numOfThreads
+     * @return факториал числа
+     * @throws InterruptedException
+     */
     public BigInteger countFactorialWithThreads(int num, int numOfThreads) throws InterruptedException {
         List<Thread> threadList = new ArrayList<>();
 
@@ -88,11 +96,23 @@ public class Factorial{
         return map.get(num);
     }
 
+    /**
+     * Подсчет паралельными стримами
+     * @param num
+     * @return фрактал
+     */
     public BigInteger countfactorialWithStream(int num) {
         return IntStream.rangeClosed(1, num)
                 .parallel()
                 .mapToObj(BigInteger::valueOf)
                 .reduce(BigInteger::multiply)
                 .get();
+    }
+
+    public BigInteger countFactorialWithExecutorService(int num) throws ExecutionException, InterruptedException {
+        final Factorial factorial = Factorial.getFactorial();
+        Future<BigInteger> future4 = executor.submit(() -> factorial.countFactorialWithSave(num));
+
+        return future4.get();
     }
 }

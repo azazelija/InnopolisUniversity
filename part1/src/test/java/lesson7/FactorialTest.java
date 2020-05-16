@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.math.BigInteger;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.ExecutionException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -85,5 +86,14 @@ class FactorialTest{
         System.out.printf("%-10s Time second iter stream\n", Duration.between(start, Instant.now()));
 
         assertEquals(BigInteger.valueOf(24), factorial.countfactorialWithStream(4));
+    }
+
+    @Test
+    void countFactorialWithExecutorService() throws ExecutionException, InterruptedException {
+        Instant start = Instant.now();
+        factorial.countFactorialWithExecutorService(50000);
+        System.out.printf("%-10s Time second iter stream\n", Duration.between(start, Instant.now()));
+
+        assertEquals(BigInteger.valueOf(24), factorial.countFactorialWithExecutorService(4));
     }
 }
