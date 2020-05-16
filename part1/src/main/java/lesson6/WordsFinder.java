@@ -1,6 +1,7 @@
 package lesson6;
 
 import java.io.*;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -55,13 +56,9 @@ public class WordsFinder {
         if (words.size() == 0)
             return false;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(output))) {
-            words.forEach(w -> {
-                try {
-                    writer.write(w + "\n");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
+            for (String word : words) {
+                writer.write(word + "\n");
+            }
             return true;
         }
     }

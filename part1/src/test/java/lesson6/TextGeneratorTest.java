@@ -3,6 +3,8 @@ package lesson6;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -11,6 +13,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * @project InnopolisUniversity
  */
 class TextGeneratorTest {
+
+    @Test
+    void getFiles() throws IOException {
+        String path2 = "src/test/java/lesson6/";
+        String[] words2 = {"Anna", "Milla", "Keka"};
+        TextGenerator.getFiles(path2, 2, 10, words2, 90);
+    }
 
     @Test
     void generateText() {
