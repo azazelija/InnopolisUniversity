@@ -10,14 +10,14 @@ import java.util.stream.IntStream;
  * @created_at 14/05/2020 - 20:50
  * @project InnopolisUniversity
  */
-public class Factorial{
+public class Factorial {
     /**
-     *  Pool threads
+     * Pool threads
      */
     private ExecutorService executor = Executors.newCachedThreadPool();
 
     /**
-     *  Контейнер, хранящий в себе вычисления фрактала для каждого числа
+     * Контейнер, хранящий в себе вычисления фрактала для каждого числа
      */
     private static Map<Integer, BigInteger> map;
 
@@ -36,6 +36,7 @@ public class Factorial{
 
     /**
      * Подсчет факторила при помощи цикла с сохранением промежуточных значений
+     *
      * @param num
      * @return
      */
@@ -59,6 +60,7 @@ public class Factorial{
 
     /**
      * Подсчет простым циклом
+     *
      * @param num
      * @return
      */
@@ -72,6 +74,7 @@ public class Factorial{
 
     /**
      * Подсчет при помощи создания новых потоков
+     *
      * @param num
      * @param numOfThreads
      * @return факториал числа
@@ -96,6 +99,7 @@ public class Factorial{
 
     /**
      * Подсчет паралельными стримами
+     *
      * @param num
      * @return фрактал
      */

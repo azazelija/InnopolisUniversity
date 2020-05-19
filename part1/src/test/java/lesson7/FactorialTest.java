@@ -94,6 +94,11 @@ class FactorialTest{
         factorial.countFactorialWithExecutorService(50000);
         System.out.printf("%-10s Time first iter executer\n", Duration.between(start, Instant.now()));
 
+        start = Instant.now();
+        factorial.countFactorialWithExecutorService(50000);
+        System.out.printf("%-10s Time second iter executer\n", Duration.between(start, Instant.now()));
+
+
         assertEquals(BigInteger.valueOf(24), factorial.countFactorialWithExecutorService(4));
     }
 }
