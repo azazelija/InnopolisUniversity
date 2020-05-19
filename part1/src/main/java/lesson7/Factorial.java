@@ -107,11 +107,20 @@ public class Factorial{
                 .get();
     }
 
+    /**
+     * Подсчет факториала несколькими потоками executorService
+     * @param num
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     public BigInteger countFactorialWithExecutorService(int num) throws ExecutionException, InterruptedException {
         final Factorial factorial = Factorial.getFactorial();
         Future<BigInteger> future4 = executor.submit(() -> factorial.countFactorialWithSave(num));
-//        Future<BigInteger> future5 = executor.submit(() -> factorial.countFactorialWithSave(num/2));
+        Future<BigInteger> future5 = executor.submit(() -> factorial.countFactorialWithSave(num));
+        Future<BigInteger> future6 = executor.submit(() -> factorial.countFactorialWithSave(num));
+        Future<BigInteger> future7 = executor.submit(() -> factorial.countFactorialWithSave(num));
 
-        return future4.get();
+        return map.get(num);
     }
 }
