@@ -120,10 +120,11 @@ public class Factorial {
      */
     public BigInteger countFactorialWithExecutorService(int num) throws ExecutionException, InterruptedException {
         final Factorial factorial = Factorial.getFactorial();
-        Future<BigInteger> future4 = executor.submit(() -> factorial.countFactorialWithSave(num));
-        Future<BigInteger> future5 = executor.submit(() -> factorial.countFactorialWithSave(num));
-        Future<BigInteger> future6 = executor.submit(() -> factorial.countFactorialWithSave(num));
-        Future<BigInteger> future7 = executor.submit(() -> factorial.countFactorialWithSave(num));
+
+        executor.submit(() -> factorial.countFactorialWithSave(num));
+        executor.submit(() -> factorial.countFactorialWithSave(num));
+        executor.submit(() -> factorial.countFactorialWithSave(num));
+        executor.submit(() -> factorial.countFactorialWithSave(num));
 
         return map.get(num);
     }
