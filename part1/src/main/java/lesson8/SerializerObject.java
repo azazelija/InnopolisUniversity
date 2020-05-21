@@ -19,13 +19,9 @@ public class SerializerObject {
 
     Logger log = Logger.getLogger(SerializerObject.class.getName());
 
-    private Object object;
-
     void serialize(Object object, String file) {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-
-            this.object = object;
 
             writer.write("{\n\"class\": \"" + object.getClass().toString() + "\",\n");
 
@@ -48,9 +44,16 @@ public class SerializerObject {
     }
 
     Object deSerialize(String file) {
-        try {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            List<String> list = reader.lines()
+                            .filter((s) -> s.length() > 5)
+                            .map(s -> s.replaceAll("[\\t\n {},\"]", ""))
+                            .collect(Collectors.toList());
+
+            Class MyClass = Class.forName(list.get(0).split(":")[1].substring(5));
+            Object object = MyClass.newInstance();
             return object;
-        } catch (Exception e) {
+        } catch (IOException | ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             log.log(Level.WARNING, "Ошибка при десериализации объекта", e);
             return null;
         }
