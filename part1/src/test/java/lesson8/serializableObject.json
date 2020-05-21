@@ -1,0 +1,15 @@
+{
+"class": "class lesson8.SomeObject",
+"field1": {
+	"type": "boolean",
+	"value": "true"
+	},	
+"field2": {
+	"type": "class java.lang.String",
+	"value": "Okey?"
+	},	
+"factorial": {
+	"type": "class lesson7.Factorial",
+	"value": "lesson7.Factorial@7a765367"
+	}	
+}

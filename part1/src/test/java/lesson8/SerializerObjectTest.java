@@ -22,7 +22,7 @@ class SerializerObjectTest {
     void setUp() {
         object = new SomeObject();
         serializerObject = new SerializerObject();
-        file = "src/test/java/lesson8/serializableObject";
+        file = "src/test/java/lesson8/serializableObject.json";
     }
 
     @Test

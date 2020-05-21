@@ -1,5 +1,6 @@
 package lesson7;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.*;
@@ -10,7 +11,7 @@ import java.util.stream.IntStream;
  * @created_at 14/05/2020 - 20:50
  * @project InnopolisUniversity
  */
-public class Factorial {
+public class Factorial implements Serializable {
     /**
      * Pool threads
      */
@@ -19,17 +20,16 @@ public class Factorial {
     /**
      * Контейнер, хранящий в себе вычисления фрактала для каждого числа
      */
-    private static Map<Integer, BigInteger> map;
+    private static Map<Integer, BigInteger> map = new ConcurrentHashMap<>();;
 
     private static Factorial factorial;
 
     private Factorial() {
     }
 
-    public static Factorial getFactorial() {
+    public static synchronized Factorial getFactorial() {
         if (factorial == null) {
-            map = new ConcurrentHashMap<>();
-            return new Factorial();
+            factorial = new Factorial();
         }
         return factorial;
     }
