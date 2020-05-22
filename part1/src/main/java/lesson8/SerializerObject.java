@@ -50,8 +50,9 @@ public class SerializerObject {
                             .map(s -> s.replaceAll("[\\t\n {},\"]", ""))
                             .collect(Collectors.toList());
 
-            Class MyClass = Class.forName(list.get(0).split(":")[1].substring(5));
+            Class<?> MyClass = Class.forName(list.get(0).split(":")[1].substring(5));
             Object object = MyClass.newInstance();
+
             return object;
         } catch (IOException | ClassNotFoundException | IllegalAccessException | InstantiationException e) {
             log.log(Level.WARNING, "Ошибка при десериализации объекта", e);

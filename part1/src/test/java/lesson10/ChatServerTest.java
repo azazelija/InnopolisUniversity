@@ -31,12 +31,11 @@ class ChatServerTest {
     }
 
     @Test
-    void serverTest() {
+    void serverTest() throws InterruptedException {
         executorService.execute(chatServer);
         for (Client client : clientList) {
             executorService.execute(client);
         }
-        while (true) {
-        }
+        executorService.shutdown();
     }
 }
