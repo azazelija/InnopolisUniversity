@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
  */
 public class ChatServer implements Runnable {
     public static final int PORT = 8080;
-    public static ExecutorService executeIt = Executors.newWorkStealingPool(10);
+    private static final ExecutorService executeIt = Executors.newCachedThreadPool();
 
     @Override
     public void run() {
@@ -21,9 +21,7 @@ public class ChatServer implements Runnable {
 
             while (!server.isClosed()) {
                 Socket client = server.accept();
-
                 executeIt.execute(new SocketListener(client));
-                System.out.print("Connection accepted.");
             }
             executeIt.shutdown();
         } catch (IOException e) {

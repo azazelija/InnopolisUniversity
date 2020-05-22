@@ -9,20 +9,22 @@ import java.net.Socket;
  * @project InnopolisUniversity
  */
 public class Client implements Runnable {
-    private Socket clientSocket;
-    private BufferedReader reader;
-    private BufferedReader in;
-    private PrintWriter out;
+
+    private String name;
+    private static final String HOST = "localhost";
+
+    public Client(String name) {
+        this.name = name;
+    }
 
     @Override
     public void run() {
-        try {
-            clientSocket = new Socket("localhost", ChatServer.PORT);
+        try (Socket clientSocket = new Socket(HOST, ChatServer.PORT);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())))) {
 
-            reader = new BufferedReader(new InputStreamReader(System.in));
-            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())));
-
+            out.write(name);
             out.write(reader.readLine());
             String serverWord = in.readLine();
 
@@ -31,5 +33,9 @@ public class Client implements Runnable {
         } catch (IOException e) {
             System.err.println(e);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

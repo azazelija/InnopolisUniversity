@@ -10,6 +10,7 @@ import java.net.Socket;
  */
 public class SocketListener implements Runnable {
     private Socket socket;
+
     private BufferedReader in;
     private PrintWriter out;
 
@@ -27,8 +28,9 @@ public class SocketListener implements Runnable {
     public void run() {
         try {
             while (!socket.isClosed()) {
+                System.out.println("Connection accepted.");
                 String message = in.readLine();
-                out.write("Server reply - " + message + " - OK");
+                out.write("Server reply - " + message + " - OK\n");
             }
             System.out.println("Client disconnected");
 
