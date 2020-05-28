@@ -24,11 +24,15 @@ public class Client implements Runnable {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())))) {
 
-            out.write(name);
-            out.write(reader.readLine());
-            String serverWord = in.readLine();
+            while (!clientSocket.isClosed()) {
+                out.write(name);
+                out.write(reader.readLine());
+                String serverWord = in.readLine();
 
-            System.out.println(serverWord);
+                System.out.println(serverWord);
+            }
+
+            out.write(name + " exit.");
 
         } catch (IOException e) {
             System.err.println(e);
