@@ -22,17 +22,18 @@ public class Client implements Runnable {
         try (Socket clientSocket = new Socket(HOST, ChatServer.PORT);
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream())))) {
+             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()))) {
 
             while (!clientSocket.isClosed()) {
-                out.write(name);
-                out.write(reader.readLine());
-                String serverWord = in.readLine();
+                out.write(reader.readLine() + System.lineSeparator());
+                out.flush();
 
+                String serverWord = in.readLine();
                 System.out.println(serverWord);
             }
 
             out.write(name + " exit.");
+            out.flush();
 
         } catch (IOException e) {
             System.err.println(e);
