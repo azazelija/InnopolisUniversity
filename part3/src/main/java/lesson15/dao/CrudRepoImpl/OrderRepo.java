@@ -2,7 +2,6 @@ package lesson15.dao.CrudRepoImpl;
 
 import lesson15.dao.CrudRepository;
 import lesson15.dao.entity.Order;
-import lesson15.dao.entity.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,12 +17,15 @@ public class OrderRepo implements CrudRepository<Order, Long> {
 
     private Connection connection;
 
+    org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(this.getClass());
+
     public OrderRepo(Connection connection) {
         try {
             this.connection = connection;
             connection.setAutoCommit(false);
+            log.info("Connection accepted");
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -36,8 +38,9 @@ public class OrderRepo implements CrudRepository<Order, Long> {
         try (PreparedStatement createPreparedStatement = connection.prepareStatement(createQuery)) {
             createPreparedStatement.executeUpdate();
             connection.commit();
+            log.trace("Order Table created");
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -50,8 +53,9 @@ public class OrderRepo implements CrudRepository<Order, Long> {
             insertPreparedStatement.setString(2, var1.getAddress());
             insertPreparedStatement.executeUpdate();
             connection.commit();
+            log.trace("UPDATE Order table");
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return var1;
@@ -75,7 +79,7 @@ public class OrderRepo implements CrudRepository<Order, Long> {
             }
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return user;
@@ -91,7 +95,7 @@ public class OrderRepo implements CrudRepository<Order, Long> {
             deletePreparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -110,7 +114,7 @@ public class OrderRepo implements CrudRepository<Order, Long> {
             deletePreparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 }

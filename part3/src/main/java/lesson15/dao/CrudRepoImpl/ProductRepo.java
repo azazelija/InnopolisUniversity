@@ -3,6 +3,8 @@ package lesson15.dao.CrudRepoImpl;
 import lesson15.dao.CrudRepository;
 import lesson15.dao.entity.Product;
 import lesson15.dao.entity.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,12 +20,15 @@ public class ProductRepo implements CrudRepository<Product, Long> {
 
     private Connection connection;
 
+    private Logger log = LoggerFactory.getLogger(this.getClass());
+
     public ProductRepo(Connection connection) {
         try {
             this.connection = connection;
             connection.setAutoCommit(false);
+            log.info("Connection accepted");
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -33,12 +38,19 @@ public class ProductRepo implements CrudRepository<Product, Long> {
                 "CREATE TABLE PRODUCT(id INT PRIMARY KEY, " +
                 "label VARCHAR(255));";
 
-        try (PreparedStatement createPreparedStatement = connection.prepareStatement(createQuery)) {
+        String createQueryForLogger = "DROP TABLE IF EXISTS LOGS;" +
+                "CREATE TABLE LOGS(userid VARCHAR(255), " +
+                "message VARCHAR(255));";
+
+        try (PreparedStatement createPreparedStatement = connection.prepareStatement(createQuery);
+        PreparedStatement preparedStatement = connection.prepareStatement(createQueryForLogger)) {
             createPreparedStatement.executeUpdate();
+            preparedStatement.executeUpdate();
             connection.commit();
+            log.info("Product Table created");
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -51,9 +63,10 @@ public class ProductRepo implements CrudRepository<Product, Long> {
             insertPreparedStatement.setString(2, var1.getLabel());
             insertPreparedStatement.executeUpdate();
             connection.commit();
+            log.info("Product table UPDATED");
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return var1;
@@ -78,7 +91,7 @@ public class ProductRepo implements CrudRepository<Product, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return user;
@@ -95,7 +108,7 @@ public class ProductRepo implements CrudRepository<Product, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -115,7 +128,7 @@ public class ProductRepo implements CrudRepository<Product, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
     }

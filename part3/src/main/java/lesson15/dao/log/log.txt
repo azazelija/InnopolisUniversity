@@ -1,0 +1,70 @@
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:46:00 INFO  OrderRepo:26 - Connection accepted
+2020-06-10 22:46:00 TRACE OrderRepo:41 - Order Table created
+2020-06-10 22:46:00 TRACE OrderRepo:56 - UPDATE Order table
+2020-06-10 22:48:00 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:00 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:48:01 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:48:01 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:48:01 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:48:01 INFO  ProductRepo:29 - Connection accepted
+2020-06-10 22:48:01 INFO  ProductRepo:50 - Product Table created
+2020-06-10 22:48:01 INFO  ProductRepo:66 - Product table UPDATED
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
+2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
+2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created

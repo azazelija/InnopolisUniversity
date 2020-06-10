@@ -2,6 +2,8 @@ package lesson15.dao.CrudRepoImpl;
 
 import lesson15.dao.CrudRepository;
 import lesson15.dao.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,12 +19,15 @@ public class UserRepo implements CrudRepository<User, Long> {
 
     private Connection connection;
 
+    private Logger log = LoggerFactory.getLogger(this.getClass());
+
     public UserRepo(Connection connection) {
         try {
             this.connection = connection;
             connection.setAutoCommit(false);
+            log.info("Connection accepted");
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -38,9 +43,10 @@ public class UserRepo implements CrudRepository<User, Long> {
         try (PreparedStatement createPreparedStatement = connection.prepareStatement(createQuery)) {
             createPreparedStatement.executeUpdate();
             connection.commit();
+            log.info("User Table created");
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -57,7 +63,7 @@ public class UserRepo implements CrudRepository<User, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return var1;
@@ -84,7 +90,7 @@ public class UserRepo implements CrudRepository<User, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return user;
@@ -101,7 +107,7 @@ public class UserRepo implements CrudRepository<User, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -121,7 +127,7 @@ public class UserRepo implements CrudRepository<User, Long> {
             connection.commit();
         }
         catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
     }
