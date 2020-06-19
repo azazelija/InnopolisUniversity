@@ -1,58 +1,13 @@
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:57:55 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:57:55 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:58:20 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:58:20 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:03 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:03 INFO  UserRepo:46 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
-2020-06-10 22:59:53 INFO  UserRepo:28 - Connection accepted
-2020-06-10 22:59:53 WARN  UserRepo:29 - Connection accepted WARN
-2020-06-10 22:59:53 INFO  UserRepo:47 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
+2020-06-12 10:24:40 INFO  UserRepo:28 - Connection accepted
+2020-06-12 10:24:40 INFO  UserRepo:46 - User Table created
