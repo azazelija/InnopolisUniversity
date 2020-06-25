@@ -1,0 +1,6 @@
+
+c	java:S119
+"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(¯šÚ»ùÿÿÿÿ
+J
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ð»Ëø
