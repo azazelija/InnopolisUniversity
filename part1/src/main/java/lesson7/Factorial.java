@@ -20,8 +20,11 @@ public class Factorial implements Serializable {
     /**
      * Контейнер, хранящий в себе вычисления фрактала для каждого числа
      */
-    private static Map<Integer, BigInteger> map = new ConcurrentHashMap<>();;
+    private Map<Integer, BigInteger> map = new ConcurrentHashMap<>();;
 
+    /**
+     * Паттерн одиночка для сохранения результатов вычисления для послдующего использования
+     */
     private static Factorial factorial;
 
     private Factorial() {
